@@ -1,18 +1,16 @@
-* 좌표계 번호 설정  
+### • Setting the Coordinate System Number
 
-  큐브의 설정 방법에 따라 공간상의 위치를 베이스 좌표계 또는 지정 사용자 좌표계를 통해 공간상의 위치를 지정할 수 있습니다.  
-  좌표계 번호가 "0" 으로 설정된 경우 베이스좌표계상에 정의된 위치들을 활용하여 큐브 영역을 설정 합니다.  
-  좌표계 번호가 "1" 이상인 경우 해당 번호에 대응하는 사용자 좌표계 상의 위치를 통해 큐브 영역이 지정 됩니다.   
-  {% hint style="info" %}
-  
- 좌표계를 변경 하더라도 큐브 영역 정의를 위해 지정된 위치들은 자동으로 변경 되지 않으므로 사용자의 의도와 다른 위치에 큐브 영역이 지정 될 수 있으므로 주의가 필요합니다.
-  {% endhint %}
+You can specify the position of the cube in space using either the base coordinate system or a defined user coordinate system, depending on the cube setting method.  
+If the coordinate system number is set to **“0”**, the cube area is configured using positions defined in the **base coordinate system**.  
+If the coordinate system number is **“1” or higher**, the cube area is defined using positions based on the corresponding **user coordinate system**.
 
-  ![큐브설정](../_assets/fig1_dst_dialog.png)
+> **Note**  
+> Even if you change the coordinate system, the positions defined for the cube area do **not** update automatically.  
+> Therefore, the cube may be assigned to a location different from what the user intended, so caution is required.
 
-  
-–	유저 좌표계로 설정하는 경우에는 반드시 대각 위치와 중심위치를 유저 좌표계 위에서 설정하여야 합니다.  
+![Cube Setting](../_assets/fig1_dst_dialog.png)
 
-  <img src="../_assets/user1.png" width="40%"></img>
-  <img src="../_assets/user2.png" width="44%"></img>
+- When using a **user coordinate system**, both the diagonal point and the center point **must be defined within the user coordinate system**.
 
+<img src="../_assets/user1.png" width="40%"/>
+<img src="../_assets/user2.png" width="44%"/>

@@ -1,175 +1,209 @@
-﻿# Hi6 제어기 큐브 간섭 방지 기능설명서
+﻿# Hi6 Controller Cube Interference Check Manual
 
 {% hint style="warning" %}
-본 제품 설명서에서 제공되는 정보는 현대로보틱스의 자산입니다.
+The information presented in this manual is the property of HD Hyundai Robotics.
 
-현대로보틱스의 서면에 의한 동의 없이 전부 또는 일부를 무단 전재 및 재배포할 수 없으며, 제3자에게 제공되거나 다른 목적에 사용할 수 없습니다.
+The manual may neither be copied, in part or in full, nor redistributed without prior written consent from HD Hyundai Robotics.
 
-
-
-본 설명서는 사전 예고 없이 변경될 수 있습니다.
+It may neither be provided to any third party nor used for any other purposes.
 
 
 
-**Copyright ⓒ 2023 by Hyundai Robotics**
+HD Hyundai Robotics reserves the right to modify this document without prior notification.
+
+
+
+**Copyright ⓒ 2023 by HD Hyundai Robotics**
 {% endhint %}
 
 
 
-# 이 설명서에 대하여
+# About the Manual
 
-이 설명서는 현대로보틱스 Hi6 제어기의 큐브 간섭 방지 기능의 기본 사항과 구조 및 적용 방법에 대해 설명합니다. 각 장에서는 기본 조작 방법뿐만 아니라 간단한 응용 기능의 사용 방법에 대해 설명합니다.
+This manual explains the fundamentals, structure, and application methods of the cube-interference check function of the HD Hyundai Robotics Hi6 controller. Each chapter describes not only the basic operation procedures but also how to use simple application functions.
 
-이 설명서는 현대로보틱스 제품을 구매한 고객에게 참조용으로 제공되거나 교육을 위한 내부 교육 자료로 제공되어 사용될 수 있습니다.
+This manual may be provided as a reference for customers who have purchased HD Hyundai Robotics products, or used as internal training material for educational purposes.
 
-이 설명서는 표준 사양을 기준으로 작성되었으므로 구입하신 제품의 모델에 따라 일부 내용이 다를 수 있습니다. 또한 이 설명서의 내용과 사양은 제품의 성능 향상을 위해 예고 없이 변경될 수 있으며 부정확한 내용이나 오탈자로 인해 발생하는 상황에 대해서 현대로보틱스는 책임이 없습니다. 개정에 관한 상세한 정보는 당사의 인터넷 웹사이트\(www.hyundai-robotics.com\)를 방문하여 확인하시기 바랍니다.
-
-
-
-# 1. 개요
-
-1.1 기능의 목적
-
-–	재생 중에 여러 로봇이 동시에 동일 큐브 영역에 진입하는 것을 방지합니다.
-
-–	로봇의 툴 끝 위치(TCP)가 설정된 큐브 영역에 진입한 경우 신호를 출력함으로써 사용자가 이 신호를 이용하여 다양한 응용을 가능하도록 합니다.
-
-![개요](../_assets/schematic_diagram.png)
+Because this manual is based on standard specifications, some details may vary depending on the model of the product you purchased. In addition, the contents and specifications of this manual are subject to change without notice for performance improvements. HD Hyundai Robotics is not responsible for any issues arising from inaccurate information or typographical errors. For detailed information on revisions, please visit our website\(www.hyundai-robotics.com\).
 
 
-1.2 기능의 범위
 
-1) 로봇 프로그램을 기동 중인 경우
-–	로봇의 TCP가 설정한 큐브의 영역의 내부에 존재하면 할당된 신호 출력이 ON되고 외부에 존재하면 신호출력이 OFF됩니다.
-–	어떤 한 로봇의 TCP(툴 끝 위치)가 큐브 영역에 진입했거나 그 로봇이 스텝 진행 중에 스텝 목표 위치가 큐브 영역에 진입하면 그 영역에 대한 작업 우선권을 확보하고 큐브 진입 출력신호를 출력합니다.(위의 그림에서 좌측 로봇)
-–	큐브 진입 출력신호는 다른 로봇(위의 그림에서 오른쪽 로봇)에게는 큐브금지 입력신호로 입력되고 입력을 받은 로봇은 큐브 간섭이 예상될 경우 자동으로 정지합니다.
-–	먼저 큐브 영역에 진입한 로봇의 작업이 완료되면 대기하던 로봇은 자동으로 재기동 됩니다.
+# 1. Overview
 
-2) 로봇 조그 혹은 정지 중인 경우
-–	수동 모드(조그)에서는 TCP위치를 검지하여 큐브 진입 출력 신호를 출력하는 역할을 수행합니다. 
-–	조그 동작시에는 큐브 금지 입력신호가 입력되더라도 자동으로 정지하지 않으므로 주의하여 사용하십시오.
+## 1.1 Purpose of the Function
 
-1.3 기능의 제한사항 
+- Prevent multiple robots from simultaneously entering the same cube area during playback.  
+- When the robot’s tool center point (TCP) enters a defined cube area, a signal is output, allowing the user to utilize this signal for various applications.
 
-본 기능은 큐브에 동시에 진입이 예상될 경우 자동으로 정지하고 큐브의 진입금지 입력 신호가 클리어 되면 자동으로 재기동 하도록 설계되어 있습니다. 
+![Overview](../_assets/schematic_diagram.png)
 
-그러나 만일 큐브 진입 금지 입력신호를 감지한 시점에 최대한 감속하여 정지함에도 불구하고 큐브 영역에 동시에 진입할 수 밖에 없는 경우가 있습니다. 이 경우를 Dead-Lock이라고 합니다. 
+## 1.2 Scope of the Function
 
-공통 큐브에대해 큐브 진입 출력 신호와 큐브 금지 입력 신호 연결이 잘못되어 있거나, 두 로봇간의 통신 지연으로 Dead-Lock이 발생할 수 있습니다. 이 경우에는 두 로봇이 큐브 영역에 동시에 진입할 수 있으며 에러가 발생합니다. (E0222 동일 큐브 동시 진입금지)
+### 1) When the robot program is running
+- If the robot’s TCP is inside the defined cube area, the assigned output signal turns **ON**; if it is outside, the signal turns **OFF**.  
+- When a robot’s TCP enters the cube area, or when its step target position enters the cube area during step execution, that robot gains priority for the area and outputs a cube-entry signal (left robot in the figure above).  
+- The cube-entry output signal is received by the other robot (right robot in the figure above) as a cube-prohibition input signal, and the receiving robot automatically stops when cube interference is expected.  
+- When the robot that first entered the cube area completes its operation, the waiting robot automatically restarts.
 
-- 본 기능은 두 로봇이 동시에 공통 큐브 영역에 진입하는 Dead-Lock현상이 발생할 수 있습니다.
-- 데드락(dead-lock)상태를 자동 회피하여 원점으로 복귀하는 기능은 지원하지 않습니다.
-- Arm 간섭 검지 기능과 연동하여 사용할 수 없습니다.
-# 2. 관련 기능
+### 2) When the robot is jogging or stopped
+- In Manual Mode (Jog), the system detects the TCP position and outputs the cube-entry signal.  
+- During jog operation, even if the cube-prohibition input signal is received, the robot **does not** automatically stop, so caution is required.
 
-2.1 큐브 영역 설정
+## 1.3 Limitations of the Function
 
-『시스템』 → 『4: 응용파라미터』 → 『7: 간섭방지』→ 2: 큐브 조건 설정』을 선택합니다.
+This function is designed to automatically stop the robot when simultaneous entry into a cube is expected and to automatically restart once the cube-prohibition input signal is cleared.
 
-![큐브설정](../_assets/fig1_dst_dialog.png)
+However, even if the robot decelerates as much as possible when a cube-prohibition input signal is detected, there may be cases where simultaneous entry into the cube area cannot be avoided. This situation is called a **dead-lock**.
 
-큐브 조건은 화면 우측 (+) 버튼 또는 (-) 버튼을 통해 추가하거나 제거 할 수 있습니다. 
-개별 큐브 조건에 대해 사용 여부를 설정하고 큐브 진입 시 출력 신호를 출력할 포트와 큐브 진입을 금지하기 위한 입력 신호를 각각 설정 합니다. 
+A dead-lock may occur if the cube-entry output signal and cube-prohibition input signal are incorrectly connected for a shared cube, or due to communication delays between two robots. In such cases, both robots may enter the cube area simultaneously, resulting in an error:  
+**E0222 – Same cube simultaneous entry detected**.
 
+- A dead-lock condition may occur when two robots attempt to enter a shared cube area simultaneously.  
+- Automatic avoidance of dead-lock or automatic return-to-home recovery is **not supported**.  
+- This function **cannot** be used in conjunction with the Arm Interference Detection function.# 2. Related Functions
 
-2.1 큐브 영역설정 방법  
-큐브의 설정 방법은 2가지로 제공됩니다.
+## 2.1 Cube Area Settings
 
-* 대각점 설정방법  
-–	대각점은 육면체의 대각 위치 두 점을 설정합니다. 아래의 그림처럼 대각의 시작위치와 종료위치를 직접 입력합니다.  
-* 중심점 설정방법  
-–	중심점 설정 방법은 큐브의 중심점과 X방향, Y방향, Z방향 거리를 각각 설정하는 방식입니다.
+Select:『System』 → 『4: Application Parameter』 → 『7: Cube inteference check』
 
+![Cube Settings](../_assets/fig1_dst_dialog.png)
 
-1) 큐브 영역설정 방법  
-큐브의 설정 방법은 2가지로 제공됩니다.
+You can add or remove cube conditions using the **(+)** or **(–)** buttons on the right side of the screen.  
+For each individual cube condition, configure whether it is enabled, assign the output signal for cube-entry detection, and set the input signal used to prohibit entry into the cube.
+## 2.1 Cube Area Setting Methods
 
-* 대각점 설정방법  
-–	대각점은 육면체의 대각 위치 두 점을 설정합니다. 아래의 그림처럼 대각의 시작위치와 종료위치를 직접 입력합니다.  
-–	현재 로봇의 TCP 위치로 기록하려면 <시작위치> 혹은 <종료위치> 버튼에 커서를 놓고 ‘ENTER’ 키를 누르면 현재의 위치로 기록할 수 있습니다.  
+Two methods are provided for defining a cube area.
 
-  설정 예)
+---
+
+### • Diagonal Point Method
+- This method defines the cube by specifying two diagonal points of the hexahedron.  
+  As shown in the illustration, you manually enter the starting and ending diagonal positions.
+
+### • Center Point Method
+- This method defines the cube by specifying the cube’s center point and the distances in the X, Y, and Z directions.
+### 1) Cube Area Setting Methods
+
+Two methods are provided for defining a cube area.
+
+---
+
+### • Diagonal Point Method
+
+- This method defines a cube by specifying two diagonal points of the hexahedron.  
+  As shown in the figure below, you directly enter the starting and ending diagonal positions.  
+- To record the robot’s current TCP position, place the cursor on the **<Start Position>** or **<End Position>** button and press **ENTER**.  
+  The current TCP position will be saved as the selected position.
+
+**Example Setting**
+
 <p align="center">
-  <img src="../_assets/cube_diag_points.png" ></img>
-  <img src="../_assets/diag_pints2.png"> 
+  <img src="../_assets/cube_diag_points.png" />
+  <img src="../_assets/diag_pints2.png" />
 </p>
+### • Method for Setting the Center Point
 
-* 중심점 설정방법  
-–	중심점 설정 방법은 큐브의 중심점과 X방향, Y방향, Z방향 거리를 각각 설정하는 방식입니다.  
-–	중심점을 현재 로봇의 TCP 위치로 기록하려면 <중심위치>에 커서를 놓고 ‘ENTER’ 키를 누르면 현재의 위치로 기록할 수 있습니다.  
+- The center point is defined by specifying the cube’s center position and the distances in the X, Y, and Z directions.  
+- To record the center point as the robot’s current TCP position, place the cursor on **<Center Position>** and press **ENTER**.  
+  The current TCP position will be saved as the center point.
 
-  설정 예)
+**Example Setting**
+
 <p align="center">
-  <img src="../_assets/center_point.png" ></img>
-  <img src="../_assets/center_point2.png"> 
+  <img src="../_assets/center_point.png" />
+  <img src="../_assets/center_point2.png" />
 </p>
 
-   큐브 영역의 중심점 위치를 기록하고 중심점으로 부터 X, Y, Z 방향에 대한 거리를 각각 설정 합니다. * 좌표계 번호 설정  
+Record the center point of the cube area, then specify the distances in the X, Y, and Z directions from that center point.
+### • Setting the Coordinate System Number
 
-  큐브의 설정 방법에 따라 공간상의 위치를 베이스 좌표계 또는 지정 사용자 좌표계를 통해 공간상의 위치를 지정할 수 있습니다.  
-  좌표계 번호가 "0" 으로 설정된 경우 베이스좌표계상에 정의된 위치들을 활용하여 큐브 영역을 설정 합니다.  
-  좌표계 번호가 "1" 이상인 경우 해당 번호에 대응하는 사용자 좌표계 상의 위치를 통해 큐브 영역이 지정 됩니다.   
-  {% hint style="info" %}
-  
- 좌표계를 변경 하더라도 큐브 영역 정의를 위해 지정된 위치들은 자동으로 변경 되지 않으므로 사용자의 의도와 다른 위치에 큐브 영역이 지정 될 수 있으므로 주의가 필요합니다.
-  {% endhint %}
+You can specify the position of the cube in space using either the base coordinate system or a defined user coordinate system, depending on the cube setting method.  
+If the coordinate system number is set to **“0”**, the cube area is configured using positions defined in the **base coordinate system**.  
+If the coordinate system number is **“1” or higher**, the cube area is defined using positions based on the corresponding **user coordinate system**.
 
-  ![큐브설정](../_assets/fig1_dst_dialog.png)
+> **Note**  
+> Even if you change the coordinate system, the positions defined for the cube area do **not** update automatically.  
+> Therefore, the cube may be assigned to a location different from what the user intended, so caution is required.
 
-  
-–	유저 좌표계로 설정하는 경우에는 반드시 대각 위치와 중심위치를 유저 좌표계 위에서 설정하여야 합니다.  
+![Cube Setting](../_assets/fig1_dst_dialog.png)
 
-  <img src="../_assets/user1.png" width="40%"></img>
-  <img src="../_assets/user2.png" width="44%"></img>
+- When using a **user coordinate system**, both the diagonal point and the center point **must be defined within the user coordinate system**.
 
-* 큐브 입출력 신호 설정 
-  
-–	큐브진입 출력신호 : 자신의 로봇이 해당 큐브 영역에 진입했는지를 검지하여 신호로 출력해주는 기능입니다. 큐브 진입 출력신호에 이 신호번호를 설정합니다.  
-–	큐브금지 입력신호  : 다른 로봇이 해당 큐브 영역에 진입했을 경우 신호를 입력 받기 위한 신호 번호를 설정합니다.  
+<img src="../_assets/user1.png" width="40%"/>
+<img src="../_assets/user2.png" width="44%"/>
+### • Cube I/O Signal Settings
 
-  상기 로봇에서 두 로봇의 공통 큐브 영역은 로봇 1의 큐브 2와 로봇 2의 큐브 1번입니다. 이와 같은 경우 로봇 1의 큐브2의 ‘큐브 진입 출력신호’ 신호를 로봇 2의 큐브 1번‘큐브 금지 입력신호’에 연결하고 로봇2의 큐브 1번 ‘큐브 진입 출력신호’신호를 로봇1의 큐브 2번 ‘큐브 금지 입력신호’에 연결합니다.
- 
- <p align="center">
-  <img src="../_assets/common_cube.png" ></img>
+- **Cube-entry Output Signal**:  
+  This signal indicates whether the robot itself has entered the designated cube area.  
+  Assign the appropriate signal number to the cube-entry output signal field.
+
+- **Cube-prohibition Input Signal**:  
+  This signal number is assigned to receive an input when another robot enters the same cube area.
+
+In the example shown above, the common cube area shared by the two robots is **Cube 2 of Robot 1** and **Cube 1 of Robot 2**.  
+In this case:
+
+- Connect **Robot 1 – Cube 2 (Cube-entry Output Signal)** → **Robot 2 – Cube 1 (Cube-prohibition Input Signal)**  
+- Connect **Robot 2 – Cube 1 (Cube-entry Output Signal)** → **Robot 1 – Cube 2 (Cube-prohibition Input Signal)**
+
+<p align="center">
+  <img src="../_assets/common_cube.png" />
 </p>
-
-
-2.3 작업 프로그램 작성 및 실행 예 
+## 2.3 Example of Creating and Executing a Work Program
 
 ![](../_assets/cube_interfer_example.png)
 
-공간상에 동일한 위치에 동일한 크기의 큐브 영역을 각각의 로봇들에 설정 합니다. 
-이때, 큐브 위치는 각각의 로봇에서 선택한 좌표계 선택에 맞추어 지정 될 수 있도록 주의 하십시오. 
+Set cube areas of the same size at the same spatial location for each robot.  
+At this time, ensure that the cube positions are defined according to the coordinate system selected for each robot.
 
- 
-* 로봇 1의 큐브진입 출력신호 On 상태, 상대(로봇2)의 큐브 금지 신호 On상태
+---
+
+### **• Robot 1: Cube-entry Output Signal ON, Robot 2: Cube-prohibition Signal ON**
+
 ![](../_assets/exmple1.png)
-로봇 1의 이동 목표 위치가 지정된 큐브 영역 내부에 있는 경우, 큐브진입 출력 신호가 On 됩니다. 목표 위치가 큐브 내부가 아니더라도 이동 중 큐브영역에 진입 하는 경우에도 진입 신호가 On 됩니다. 
 
-**[로봇 1의 적용 예시]** 
-*  본 예시는 S4~S7 이 큐브 영역 내부로 진입하는 경우를 가정 합니다. 
- ![](../_assets/exmple2.png)  
- 상대 로봇과 동시에 큐브 내부로 진입하는 데드락 방지를 위해 큐브 진입 직전 스텝은 반드시 불연속으로 설정(A=0) 해주십시오. 또는 필요 시 큐브 진입 직전 wait 또는 delay 등의 명령을 통해 불연속 조건을 만들 수 있습니다.   
+When Robot 1’s target position lies inside the defined cube area, the cube-entry output signal turns ON.  
+Even if the target position is not inside the cube, the signal will turn ON if the robot enters the cube area during movement.
 
-**[로봇 2의 적용 예시]**  
-* 본 예시는 상대 로봇(R1)이 지정된 큐브에 이미 진입한 상태에서 로봇 2가 S4~S7 에 저장된 큐브 영역 내부로 진입하고자 하는 경우를 가정 합니다. 
-![](../_assets/exmple3.png)   
-상대 로봇이 이미 큐브 내부에 진입했거나, 진입 하고자 이동하는 중인 경우 큐브 진입금지 신호 (di8)이 입력됩니다. 이 때, 로봇 2의 다음 목표 위치가 큐브 내부인 경우 로봇 2는 동작을 정지하고 대기하게 됩니다. 대기 중인 경우 TP 화면에 “큐브 진입 대기중” 메시지가 표시 됩니다. 이후 상대 로봇이 큐브 영역을 이탈하게 되면 자동으로 동작을 재개합니다. 
-3 에러 감지
+---
 
+### **[Robot 1 Example]**
 
-| 발생 가능한 에러 원인 |  로봇이 큐브에 진입한 상태에서 큐브 진입 금지 신호가 입력된 경우입니다. |
-| :--- | :--- 
-| 에러 메시지| E0222 듕일 큐브 동시 진입 검지|
-| 조치 방법  | 1) 로봇을 큐브 영역 밖으로 이동하여 재기동합니다.<br>2) 이러한 에러가 발생하지 않도록 프로그램을 수정합니다.<br>- 큐브 진입 영역 직전 스텝을 불연속 스텝으로 지정<br>- WAIT명령을 이용하여 큐브 진입 직전에 추가적인 인터록 수행|
+- In this example, steps S4 to S7 are assumed to enter the cube area.
 
+![](../_assets/exmple2.png)
 
+To prevent dead-lock caused by simultaneous cube entry with the other robot,  
+**the step immediately before entering the cube must be set as a non-continuous step (A = 0).**  
+Alternatively, commands such as **WAIT** or **DELAY** may be used before entering the cube to intentionally create a non-continuous condition.
 
-# 산업안전보건기준에 관한 규칙 및 안전검사 고시
+---
 
-당해 산업용 로봇은 산업안전보건기준에 관한 규칙 및 안전검사 고시(검사 대상일 경우)의 검사 기준을 고려하여 설치하여야 한다.
+### **[Robot 2 Example]**
 
-"[산업안전보건기준에 관한 규칙](https://hrbook-hrc.web.app/#/view/rules-on-occupational-safety-and-health-standards/korean/README)"
-# 품질보증
+- In this example, Robot 1 (R1) is already inside the designated cube area, and Robot 2 attempts to enter the cube area defined in steps S4 to S7.
 
-"[품질보증](https://hrbook-hrc.web.app/#/view/quality-assurance/korean/README)"
+![](../_assets/exmple3.png)
+
+If the other robot is already inside the cube area, or is moving with the intention of entering it, the cube-prohibition signal (**di8**) is received.  
+If Robot 2’s next target position lies inside the cube area, Robot 2 will stop and wait.  
+During this waiting state, the teach pendant displays the message:  
+**“Waiting cube entry.”**
+
+Once the other robot exits the cube area, Robot 2 automatically resumes operation.
+
+# 3. Error Detection
+
+| Possible Cause of Error | This occurs when the cube-prohibition input signal is received while the robot is already inside the cube area. |
+| :--- | :--- |
+| Error Message | E0222 Same cube simultaneous entry detected |
+| Corrective Actions | 1) Jog the robot outside the cube area, and then restart it. <br> 2) Modify the program to prevent this error from occurring. <br> - Set the step immediately before entering the cube as a non-continuous step. <br> - Use a WAIT command to perform additional interlocks right before cube entry. |
+
+# Rules on Occupational Safety and Health Standards, and Notice for Safety Inspection
+
+The industrial robot should be installed in consideration of the inspection standards both of the Rules on Occupational Safety and Health Standards and of the Notice for Safety Inspection \(if subject to inspection\).
+
+"[Rules on Occupational Safety and Health Standards](https://hrbook-hrc.web.app/#/view/rules-on-occupational-safety-and-health-standards/english/README)"
+# Quality Assurance
+
+"[Quality Assurance](https://hrbook-hrc.web.app/#/view/quality-assurance/english/README)"
