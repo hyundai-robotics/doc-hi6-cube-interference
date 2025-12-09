@@ -11,5 +11,6 @@
   * [2.5 Signal Settings](2-cube-setting/cube_setting_io.md)
   * [Usage Examples](2-cube-setting/cube_interfer_example.md)
 * [3. Errors](2-cube-setting/3_ErrorCheck.md)
-* [Regulations on Occupational Safety and Health Standards and Safety Inspection Notice](appendices/rules-occupational-safety.md)
+* [Appendices](appendices/README.md)
+  * [Rules on Occupational Safety and Health Standards, and Notice for Safety Inspection](appendices/rules-occupational-safety.md)
 * [Quality Assurance](quality-assurance.md)
