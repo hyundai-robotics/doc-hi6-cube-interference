@@ -1,6 +1,6 @@
 {
     "langCode": "ko",
-    "series": "현대로봇 Hi6 제어기",
+    "series": "현대로봇 ${cont_model} 제어기",
     "title": "큐브간섭검지 기능설명서",
     "publisher": "HD현대로보틱스",
     "tocTitle": "목차",
