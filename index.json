@@ -6,62 +6,62 @@
 	},
 	{
 		"link": "0-about-this-manual/README.md",
-		"char_ofs": 263,
-		"byte_ofs": 522
+		"char_ofs": 280,
+		"byte_ofs": 539
 	},
 	{
 		"link": "1-cube-interference/README.md",
-		"char_ofs": 702,
-		"byte_ofs": 1564
+		"char_ofs": 768,
+		"byte_ofs": 1630
 	},
 	{
 		"link": "2-cube-setting/README.md",
-		"char_ofs": 1916,
-		"byte_ofs": 4351
+		"char_ofs": 1982,
+		"byte_ofs": 4417
 	},
 	{
 		"link": "2-cube-setting/cube_setting.md",
-		"char_ofs": 2175,
-		"byte_ofs": 4898
+		"char_ofs": 2241,
+		"byte_ofs": 4964
 	},
 	{
 		"link": "2-cube-setting/cube_setting_diag.md",
-		"char_ofs": 2366,
-		"byte_ofs": 5342
+		"char_ofs": 2432,
+		"byte_ofs": 5408
 	},
 	{
 		"link": "2-cube-setting/cube_setting_center_point.md",
-		"char_ofs": 2703,
-		"byte_ofs": 5962
+		"char_ofs": 2769,
+		"byte_ofs": 6028
 	},
 	{
 		"link": "2-cube-setting/cube_setting_crd.md",
-		"char_ofs": 3043,
-		"byte_ofs": 6577
+		"char_ofs": 3109,
+		"byte_ofs": 6643
 	},
 	{
 		"link": "2-cube-setting/cube_setting_io.md",
-		"char_ofs": 3624,
-		"byte_ofs": 7700
+		"char_ofs": 3690,
+		"byte_ofs": 7766
 	},
 	{
 		"link": "2-cube-setting/cube_interfer_example.md",
-		"char_ofs": 4059,
-		"byte_ofs": 8624
+		"char_ofs": 4125,
+		"byte_ofs": 8690
 	},
 	{
 		"link": "2-cube-setting/3_ErrorCheck.md",
-		"char_ofs": 5002,
-		"byte_ofs": 10578
+		"char_ofs": 5068,
+		"byte_ofs": 10644
 	},
 	{
 		"link": "appendices/rules-occupational-safety.md",
-		"char_ofs": 5275,
-		"byte_ofs": 11158
+		"char_ofs": 5341,
+		"byte_ofs": 11224
 	},
 	{
 		"link": "quality-assurance.md",
-		"char_ofs": 5495,
-		"byte_ofs": 11556
+		"char_ofs": 5561,
+		"byte_ofs": 11622
 	}
 ]
