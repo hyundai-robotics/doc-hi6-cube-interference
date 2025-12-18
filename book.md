@@ -1,4 +1,4 @@
-﻿# Hi6 Controller Cube Interference Check Manual
+﻿# ${cont_model} Controller Cube Interference Check Manual
 
 {% hint style="warning" %}
 The information presented in this manual is the property of HD Hyundai Robotics.
@@ -20,7 +20,7 @@ HD Hyundai Robotics reserves the right to modify this document without prior not
 
 # About the Manual
 
-This manual explains the fundamentals, structure, and application methods of the cube-interference check function of the HD Hyundai Robotics Hi6 controller. Each chapter describes not only the basic operation procedures but also how to use simple application functions.
+This manual explains the fundamentals, structure, and application methods of the cube-interference check function of the HD Hyundai Robotics ${cont_model} controller. Each chapter describes not only the basic operation procedures but also how to use simple application functions.
 
 This manual may be provided as a reference for customers who have purchased HD Hyundai Robotics products, or used as internal training material for educational purposes.
 
@@ -198,6 +198,11 @@ Once the other robot exits the cube area, Robot 2 automatically resumes operatio
 | :--- | :--- |
 | Error Message | E0222 Same cube simultaneous entry detected |
 | Corrective Actions | 1) Jog the robot outside the cube area, and then restart it. <br> 2) Modify the program to prevent this error from occurring. <br> - Set the step immediately before entering the cube as a non-continuous step. <br> - Use a WAIT command to perform additional interlocks right before cube entry. |
+
+# Appendices
+
+  
+
 
 # Rules on Occupational Safety and Health Standards, and Notice for Safety Inspection
 

@@ -1,4 +1,4 @@
-﻿# Hi6 Controller Cube Interference Check Manual
+﻿# ${cont_model} Controller Cube Interference Check Manual
 
 {% hint style="warning" %}
 The information presented in this manual is the property of HD Hyundai Robotics.

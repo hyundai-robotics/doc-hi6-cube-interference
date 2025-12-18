@@ -1,6 +1,6 @@
 ﻿# Table of contents
 
-* [Hi6 Controller Cube Interference check Feature Manual](README.md)
+* [${cont_model} Controller Cube Interference check Feature Manual](README.md)
 * [About This Manual](0-about-this-manual/README.md)
 * [1. Overview](1-cube-interference/README.md)
 * [2. Cube Interference check Settings](2-cube-setting/README.md)

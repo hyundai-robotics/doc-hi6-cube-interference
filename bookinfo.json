@@ -1,8 +1,11 @@
 {
     "langCode": "en",
-    "series": "Hyndai Robot Hi6 Controller",
+    "series": "Hyundai Robot ${cont_model} Controller",
     "title": "Cube Interference Check",
     "publisher": "HD Hyundai Robotics",
     "tocTitle": "Table of Contents",
-    "tocTitleElements": "[ \"h1\", \"h2\" ]"
+    "tocTitleElements": "[ \"h1\", \"h2\" ]",
+    "variables": {
+        "cont_model": "Hi6"
+    }
 }
