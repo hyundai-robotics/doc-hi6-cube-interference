@@ -1,6 +1,6 @@
 ﻿# Table of contents
 
-* [Hi6 제어기 큐브 간섭 방지 기능설명서](README.md)
+* [${cont_model} 제어기 큐브 간섭 방지 기능설명서](README.md)
 * [이 설명서에 대하여](0-about-this-manual/README.md)
 * [1. 개요](1-cube-interference/README.md)
 * [2. 큐브 간섭방지 설정](2-cube-setting/README.md)
