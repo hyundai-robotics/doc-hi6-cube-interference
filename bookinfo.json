@@ -1,11 +1,12 @@
 {
     "langCode": "ko",
-    "series": "현대로봇 Hi6 제어기",
-    "title": "큐브간섭검지 기능설명서",
+    "series": "${cont_model} 제어기",
+    "title": "기능 설명서 - 큐브간섭검지",
     "publisher": "HD현대로보틱스",
     "tocTitle": "목차",
     "tocTitleElements": "[ \"h1\", \"h2\" ]",
-    "variables": {
-         "cont_model": "Hi6"
-    }
+    "docId": "${cont_model:upper}CUBEINTERFERENCE_KO_001",
+    "references": [
+        { "rpath" : "doc-hi6-operation/ko-tp630" }
+    ]
 }
