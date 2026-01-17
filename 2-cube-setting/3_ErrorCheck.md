@@ -1,4 +1,4 @@
-
+﻿
 # 3. Error Detection
 
 | Possible Cause of Error | This occurs when the cube-prohibition input signal is received while the robot is already inside the cube area. |

@@ -1,4 +1,4 @@
-## 2.3 Example of Creating and Executing a Work Program
+﻿## 2.3 Example of Creating and Executing a Work Program
 
 ![](../_assets/cube_interfer_example.png)
 
@@ -11,7 +11,7 @@ At this time, ensure that the cube positions are defined according to the coordi
 
 ![](../_assets/exmple1.png)
 
-When Robot 1’s target position lies inside the defined cube area, the cube-entry output signal turns ON.  
+When Robot 1's target position lies inside the defined cube area, the cube-entry output signal turns ON.  
 Even if the target position is not inside the cube, the signal will turn ON if the robot enters the cube area during movement.
 
 ---
@@ -35,8 +35,8 @@ Alternatively, commands such as **WAIT** or **DELAY** may be used before enterin
 ![](../_assets/exmple3.png)
 
 If the other robot is already inside the cube area, or is moving with the intention of entering it, the cube-prohibition signal (**di8**) is received.  
-If Robot 2’s next target position lies inside the cube area, Robot 2 will stop and wait.  
+If Robot 2's next target position lies inside the cube area, Robot 2 will stop and wait.  
 During this waiting state, the teach pendant displays the message:  
-**“Waiting cube entry.”**
+**"Waiting cube entry."**
 
 Once the other robot exits the cube area, Robot 2 automatically resumes operation.

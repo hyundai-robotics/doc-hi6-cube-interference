@@ -1,7 +1,7 @@
-### • Method for Setting the Center Point
+﻿### • Method for Setting the Center Point
 
-- The center point is defined by specifying the cube’s center position and the distances in the X, Y, and Z directions.  
-- To record the center point as the robot’s current TCP position, place the cursor on **<Center Position>** and press **ENTER**.  
+- The center point is defined by specifying the cube's center position and the distances in the X, Y, and Z directions.  
+- To record the center point as the robot's current TCP position, place the cursor on **<Center Position>** and press **ENTER**.  
   The current TCP position will be saved as the center point.
 
 **Example Setting**

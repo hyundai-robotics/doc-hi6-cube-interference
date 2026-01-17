@@ -1,12 +1,12 @@
 ﻿# Table of contents
 
-* [${cont_model} Controller Cube Interference check Feature Manual](README.md)
+* [${cont_model} Controller Function Manual - Cube Interference Check](README.md)
 * [About This Manual](0-about-this-manual/README.md)
 * [1. Overview](1-cube-interference/README.md)
 * [2. Cube Interference check Settings](2-cube-setting/README.md)
   * [2.1 Cube Area Settings](2-cube-setting/cube_setting.md)
-  * [2.2 Cube Area Settings – Diagonal Points](2-cube-setting/cube_setting_diag.md)
-  * [2.3 Cube Area Settings – Center Point](2-cube-setting/cube_setting_center_point.md)
+  * [2.2 Cube Area Settings - Diagonal Points](2-cube-setting/cube_setting_diag.md)
+  * [2.3 Cube Area Settings - Center Point](2-cube-setting/cube_setting_center_point.md)
   * [2.4 Cube Area Coordinate System](2-cube-setting/cube_setting_crd.md)
   * [2.5 Signal Settings](2-cube-setting/cube_setting_io.md)
   * [Usage Examples](2-cube-setting/cube_interfer_example.md)

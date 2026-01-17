@@ -1,8 +1,8 @@
-### • Setting the Coordinate System Number
+﻿### • Setting the Coordinate System Number
 
 You can specify the position of the cube in space using either the base coordinate system or a defined user coordinate system, depending on the cube setting method.  
-If the coordinate system number is set to **“0”**, the cube area is configured using positions defined in the **base coordinate system**.  
-If the coordinate system number is **“1” or higher**, the cube area is defined using positions based on the corresponding **user coordinate system**.
+If the coordinate system number is set to **"0"**, the cube area is configured using positions defined in the **base coordinate system**.  
+If the coordinate system number is **"1" or higher**, the cube area is defined using positions based on the corresponding **user coordinate system**.
 
 > **Note**  
 > Even if you change the coordinate system, the positions defined for the cube area do **not** update automatically.  
