@@ -4,6 +4,7 @@
     "title": "Function Manual - Cube Interference Check",
     "publisher": "HD Hyundai Robotics",
     "tocTitle": "Table of Contents",
+    "tocTitleElements": "[ \"h1\", \"h2\" ]",
     "docId": "${cont_model:upper}CUBEINTERFERENCE_EN_001",
     "references": [
         { "rpath" : "doc-hi6-operation/en-tp630" }
