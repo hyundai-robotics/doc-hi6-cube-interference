@@ -7,7 +7,7 @@
   * [2.1 큐브영역 설정](2-cube-setting/1-setting-type.md)
   * [2.2 큐브영역 좌표계](2-cube-setting/2-crd.md)
   * [2.3 신호설정](2-cube-setting/3-io.md)
-  * [사용예시](2-cube-setting/4-example.md)
+  * [2.4 작업 프로그램 작성 및 실행 예 ](2-cube-setting/4-example.md)
 * [3. 에러](3-error-check/README.md)  
 * [산업안전보건기준에 관한 규칙 및 안전검사 고시](appendices/rules-occupational-safety.md)
 * [품질 보증](quality-assurance.md)
