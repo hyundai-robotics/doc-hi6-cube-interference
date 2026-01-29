@@ -29,7 +29,7 @@ Keys that are to be pressed on the operation part of the teach pendant to operat
 
 It provides shortcuts to relevant information within the manual. A cross-reference will be shown in double quotation marks \(" "\) in bold as follows.
 
-* For more details on error checking, refer to "[3 Error Detection](../2-cube-setting/3_ErrorCheck.md)"을 참조하십시오.
+* For more details on error checking, refer to "[3 Error Detection](../2-cube-setting/3_ErrorCheck.md)".
 
 
 ## Note

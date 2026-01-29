@@ -1,8 +1,6 @@
 ﻿# 2. Related Functions
 
-## 2.1 Cube Area Settings
-
-Select:『System』 → 『4: Application Parameter』 → 『7: Cube inteference check』
+Select: `System - 4: Application Parameter - 7: Cube inteference check`
 
 ![Cube Settings](../_assets/fig1_dst_dialog.png)
 

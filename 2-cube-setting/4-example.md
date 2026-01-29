@@ -1,4 +1,4 @@
-﻿## 2.3 Example of Creating and Executing a Work Program
+﻿# 2.4 Example of Creating and Executing a Work Program
 
 ![](../_assets/cube_interfer_example.png)
 
@@ -7,7 +7,7 @@ At this time, ensure that the cube positions are defined according to the coordi
 
 ---
 
-### **• Robot 1: Cube-entry Output Signal ON, Robot 2: Cube-prohibition Signal ON**
+### **Robot 1: Cube-entry Output Signal ON, Robot 2: Cube-prohibition Signal ON**
 
 ![](../_assets/exmple1.png)
 
