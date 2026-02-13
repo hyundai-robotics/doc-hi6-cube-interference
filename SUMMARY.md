@@ -1,6 +1,7 @@
 ﻿# Table of contents
 
 * [${cont_model} Controller Function Manual - Cube Interference Check](README.md)
+* [Precautions](0-about-this-manual/precautions.md)
 * [About This Manual](0-about-this-manual/README.md)
 * [1. Overview](1-intro/README.md)
 * [2. Cube Interference check Settings](2-cube-setting/README.md)
