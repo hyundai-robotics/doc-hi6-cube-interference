@@ -1,45 +1,41 @@
-﻿# Notation Convention
+﻿# 符号约定
 
-In this manual, the following notation conventions and safety instructions are used to help you understand the contents.
+在本手册中，使用以下符号约定和安全指示，以帮助您理解内容。
 
-## Description of Figures
+## 图形说明
 
-Figures are used to help you understand how to operate the product and illustrate what you can see on the screen. For the description of figures, numbers will be marked for the relevant parts, and the corresponding contents will be described as follows.
+图形用于帮助您了解如何操作产品，并展示您在屏幕上可以看到的内容。对于图形的描述，相关部分的数字将被标记，对应的内容将如下所述。
 
 ![](../_assets/image_1_en.png)
 
-## GUI \(Graphical User Interface\)
+## GUI \(图形用户界面\)
 
-On the GUI, menu names and button names are enclosed in square brackets \(\[ \]\) and displayed in bold. When you need to select multiple menus in order, mark them with the &gt; symbol between the names.
+在GUI中，菜单名称和按钮名称用方括号 \(\[ \]\) 括起来，并以粗体显示。当您需要按顺序选择多个菜单时，在名称之间用 &gt; 符号标记它们。
 
-* Menu with a name: Touch the \[Menu\] button on the initial screen in manual or automatic mode.
-* Multiple menus: Touch the \[Set Up\] button &gt; \[5: Initialize &gt; 7: Unit Setting\] menu on the initial screen in manual mode.
-
-
-
-## Notation Method for Operation Keys
-
-Keys that are to be pressed on the operation part of the teach pendant to operate functions will be enclosed in single arrow brackets \(&lt; &gt;\) and displayed in bold.
-
-* If you press the &lt;Start&gt; key, the automatic operation of the program created in the robot will start.
+* 带名称的菜单：在手动或自动模式下，触摸初始屏幕上的 \[Menu\] 按钮。
+* 多个菜单：在手动模式下，触摸初始屏幕上的 \[Set Up\] 按钮 &gt; \[5: Initialize &gt; 7: Unit Setting\] 菜单。
 
 
 
-## Cross Reference 
+## 操作键的符号方法
 
-It provides shortcuts to relevant information within the manual. A cross-reference will be shown in double quotation marks \(" "\) in bold as follows.
+在教导挂件的操作部分需按下的键将用单箭头括号 \(&lt; &gt;\) 括起来，并以粗体显示。
 
-* For more details on error checking, refer to "[3 Error Detection](../2-cube-setting/3_ErrorCheck.md)".
+* 如果您按下 &lt;Start&gt; 键，机器人中创建的程序的自动操作将开始。
 
 
-## Note
 
-In this section are some helpful tips or additional information that could be useful when you use the product as follows.
+## 交叉引用 
+
+它提供了手册内相关信息的快捷方式。交叉引用将以粗体显示在双引号 \(" "\) 中，如下所示。
+
+* 有关错误检查的更多详细信息，请参见 "[3 Error Detection](../2-cube-setting/3_ErrorCheck.md)"。
+
+
+## 注意事项
+
+在本节中提供了一些在使用产品时可能有用的提示或附加信息，如下所示。
 
 {% hint style="info" %}
-When the ![](../_assets/eng-mode.png)icon blinks in the status bar, it means that you are in engineer mode.
+当 ![](../_assets/eng-mode.png) 图标在状态栏中闪烁时，这意味着您处于工程师模式。
 {% endhint %}
-
-
-
-

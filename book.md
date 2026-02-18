@@ -1,205 +1,162 @@
 ﻿
-[__SOURCE](README.md)
-# ${cont_model} Controller Function Manual - Cube Interference Check
-
-[__SOURCE](0-about-this-manual/precautions.md)
-# Precautions
-
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/en/precautions.md" %}
-
-[__SOURCE](0-about-this-manual/README.md)
-# About the Manual
-
-This manual explains the fundamentals, structure, and application methods of the cube-interference check function of the HD Hyundai Robotics ${cont_model} controller. Each chapter describes not only the basic operation procedures but also how to use simple application functions.
-
-
 [__SOURCE](1-intro/README.md)
-# 1. Overview
+# 1. 概述
 
-### 1.1 Purpose of the Function
+### 1.1 功能目的
 
-- Prevent multiple robots from simultaneously entering the same cube area during playback.  
-- When the robot's tool center point (TCP) enters a defined cube area, a signal is output, allowing the user to utilize this signal for various applications.
+- 防止多个机器人在播放时同时进入同一立方体区域。  
+- 当机器人的工具中心点（TCP）进入定义的立方体区域时，会输出一个信号，使用户能够利用该信号进行各种应用。
 
 ![Overview](../_assets/schematic_diagram.png)
 
-### 1.2 Scope of the Function
-1) When the robot program is running
-    - If the robot's TCP is inside the defined cube area, the assigned output signal turns **ON**; if it is outside, the signal turns **OFF**.  
-    - When a robot's TCP enters the cube area, or when its step target position enters the cube area during step execution, that robot gains priority for the area and outputs a cube-entry signal (left robot in the figure above).  
-    - The cube-entry output signal is received by the other robot (right robot in the figure above) as a cube-prohibition input signal, and the receiving robot automatically stops when cube interference is expected.  
-    - When the robot that first entered the cube area completes its operation, the waiting robot automatically restarts.
+### 1.2 功能范围
+1) 当机器人程序运行时
+    - 如果机器人的TCP在定义的立方体区域内，分配的输出信号将 **开启**；如果在外部，信号将 **关闭**。  
+    - 当机器人的TCP进入立方体区域，或者在步骤执行期间其步目标位置进入立方体区域时，该机器人对此区域优先，并输出立方体入口信号（上图中的左侧机器人）。  
+    - 立方体入口输出信号被其他机器人（上图中的右侧机器人）接收作为立方体禁止输入信号，当预计出现立方体干扰时，接收机器人会自动停止。  
+    - 当首次进入立方体区域的机器人完成操作后，等待的机器人会自动重启。
 
-2) When the robot is jogging or stopped
-    - In Manual Mode (Jog), the system detects the TCP position and outputs the cube-entry signal.  
-    - During jog operation, even if the cube-prohibition input signal is received, the robot **does not** automatically stop, so caution is required.
+2) 当机器人慢跑或停止时
+    - 在手动模式（Jog）下，系统检测TCP位置并输出立方体入口信号。  
+    - 在慢跑操作期间，即使接收到立方体禁止输入信号，机器人 **不会** 自动停止，因此需要小心。
 
-### 1.3 Limitations of the Function
+### 1.3 功能限制
 
-This function is designed to automatically stop the robot when simultaneous entry into a cube is expected and to automatically restart once the cube-prohibition input signal is cleared.
+该功能旨在当预计同时进入立方体时自动停止机器人，并在立方体禁止输入信号被清除后自动重启。
 
-However, even if the robot decelerates as much as possible when a cube-prohibition input signal is detected, there may be cases where simultaneous entry into the cube area cannot be avoided. This situation is called a **dead-lock**.
+然而，即使在检测到立方体禁止输入信号时，机器人尽量减速，也可能出现无法避免同时进入立方体区域的情况。这种情况称为 **死锁**。
 
-A dead-lock may occur if the cube-entry output signal and cube-prohibition input signal are incorrectly connected for a shared cube, or due to communication delays between two robots. In such cases, both robots may enter the cube area simultaneously, resulting in an error:  
-**E0222 - Same cube simultaneous entry detected**.
+如果立方体入口输出信号和立方体禁止输入信号对于共享立方体连接不正确，或者由于两个机器人之间的通信延迟，可能会发生死锁。在这种情况下，两个机器人可能会同时进入立方体区域，导致错误：  
+**E0222 - 检测到同一立方体的同时进入**。
 
-- A dead-lock condition may occur when two robots attempt to enter a shared cube area simultaneously.  
-- Automatic avoidance of dead-lock or automatic return-to-home recovery is **not supported**.  
-- This function **cannot** be used in conjunction with the Arm Interference Detection function.
+- 当两个机器人尝试同时进入共享立方体区域时，可能会发生死锁状态。  
+- 不支持自动避免死锁或自动返回主机恢复。  
+- 此功能 **无法** 与臂干扰检测功能一起使用。
 [__SOURCE](2-cube-setting/README.md)
-# 2. Related Functions
+# 2. 相关功能
 
-Select: `System - 4: Application Parameter - 7: Cube inteference check`
+选择: `系统 - 4: 应用参数 - 7: 立方体干扰检查 (System - 4: Application Parameter - 7: Cube inteference check)`
 
 ![Cube Settings](../_assets/fig1_dst_dialog.png)
 
-You can add or remove cube conditions using the **(+)** or **(-)** buttons on the right side of the screen.  
-For each individual cube condition, configure whether it is enabled, assign the output signal for cube-entry detection, and set the input signal used to prohibit entry into the cube.
-
+您可以使用屏幕右侧的 **(+)** 或 **(-)** 按钮添加或删除立方体条件。  
+对于每个单独的立方体条件，配置其是否启用，分配用于立方体进入检测的输出信号，并设置用于禁止进入立方体的输入信号。
 [__SOURCE](2-cube-setting/1-setting-type.md)
-# 2.1 Cube Area Setting Methods
+# 2.1 立方体区域设置方法
 
-Two methods are provided for defining a cube area.
+提供两种方法来定义立方体区域。
 
 ---
 
-### 2.1.1 Diagonal Point Method
+### 2.1.1 对角点法
 ![](../_assets/diag_pints2.png)
 
-- This method defines the cube by specifying two diagonal points of the hexahedron.  
-  As shown in the illustration, you manually enter the starting and ending diagonal positions.
-- To record the robot's current TCP position, place the cursor on the **<Start Position>** or **<End Position>** and press `Current robot pose`.  
-  The current TCP position will be saved as the selected position.
-- Setting Example
+- 此方法通过指定六面体的两个对角点来定义立方体。  
+  如图所示，您手动输入起始和结束的对角位置。
+- 要记录机器人的当前TCP位置，将光标放在**<起始位置>**或**<结束位置>**上，然后按 `当前 机器人 姿态 (Current robot pose)`。  
+  当前TCP位置将被保存为选定位置。
+- 设置示例
   ![](../_assets/cube_diag_points.png)  
 
-### 2.1.2 Center Point Method
+### 2.1.2 中心点法
 ![](../_assets/center_point2.png)
 
-- This method sets the cube's center point and the distances in the X, Y, and Z directions respectively.
-- The position of the cube area's center point is recorded, and the distances in the X, Y, and Z directions from the center point are set individually.
-- To record the center point as the robot's current TCP position, place the cursor on **<Center Position>** and press the `Current Robot Pose` button to save the current position.
+- 此方法设置立方体的中心点以及在X、Y和Z方向上的距离。
+- 记录立方体区域的中心点位置，并分别设置从中心点出发在X、Y和Z方向的距离。
+- 要将中心点记录为机器人的当前TCP位置，将光标放在**<中心位置>**上，并按`Current Robot Pose`按钮以保存当前的位置。
 
-- Setting Example  
+- 设置示例  
   ![](../_assets/center_point.png)
-
-
 [__SOURCE](2-cube-setting/2-crd.md)
-# 2.2 Setting the Coordinate System Number
+# 2.2 设置坐标系统编号
 
-You can specify the position of the cube in space using either the base coordinate system or a defined user coordinate system, depending on the cube setting method.  
+您可以根据立方体设置方法，使用基本坐标系统或定义的用户坐标系统来指定立方体在空间中的位置。  
 
 ![Cube Setting](../_assets/fig1_dst_dialog.png)
 
+如果坐标系统编号设置为 **"0"**，则立方体区域的配置使用在 **基本坐标系统** 中定义的位置。  
+如果坐标系统编号为 **"1" 或更高**，则立方体区域是基于相应的 **用户坐标系统** 中的位置定义的。
 
-If the coordinate system number is set to **"0"**, the cube area is configured using positions defined in the **base coordinate system**.  
-If the coordinate system number is **"1" or higher**, the cube area is defined using positions based on the corresponding **user coordinate system**.
+### 坐标系统编号
+- 设置为基本坐标系统
+    - 当坐标系统编号设置为 0 时，立方体区域使用在基本坐标系统中定义的位置进行定义。
 
-
-### Coordinate System Number
-- Set to the base coordinate system
-    - When the coordinate system number is set to 0, the cube area is defined using positions defined in the base coordinate system.
-
-- Set to a user coordinate system
-    - When the coordinate system number is set to 1 or higher, the cube area is specified using positions in the user coordinate system corresponding to that number.
-    - When using a user coordinate system, both the diagonal position and the center position must be set within the user coordinate system.
+- 设置为用户坐标系统
+    - 当坐标系统编号设置为 1 或更高时，立方体区域使用与该编号对应的用户坐标系统中的位置进行指定。
+    - 在使用用户坐标系统时，斜对角位置和中心位置都必须在用户坐标系统内设置。
 
 {% hint style="info" %}  
-Even if you change the coordinate system, the positions defined for the cube area do **not** update automatically. Therefore, the cube may be assigned to a location different from what the user intended, so caution is required.
+即使您更改坐标系统，定义的立方体区域位置也不会自动更新。因此，立方体可能被分配到与用户意图不同的位置，因此需要小心。
 {% endhint %}
 
-
-- When using a **user coordinate system**, both the diagonal point and the center point **must be defined within the user coordinate system**.
+- 使用 **用户坐标系统** 时，斜对角点和中心点 **必须在用户坐标系统内定义**。
 
 <img src="../_assets/user1.png" width="40%"/>
 <img src="../_assets/user2.png" width="44%"/>
-
 [__SOURCE](2-cube-setting/3-io.md)
-# 2.3 Cube I/O Signal Settings
+# 2.3 立方体 I/O 信号设置
 
-### Cube-entry Output Signal
-  This signal indicates whether the robot itself has entered the designated cube area.  
-  Assign the appropriate signal number to the cube-entry output signal field.
+### 立方体进入输出信号
+  此信号指示机器人本身是否已进入指定的立方体区域。  
+  将适当的信号编号分配给立方体进入输出信号字段。
 
-### Cube-prohibition Input Signal
-  This signal number is assigned to receive an input when another robot enters the same cube area.
+### 立方体禁止输入信号
+  此信号编号被分配用于当其他机器人进入相同的立方体区域时接收输入。
 
-### Common Cube Area Connection Method
+### 通用立方体区域连接方法
 ![](../_assets/common_cube.png)  
-In the example shown above, the common cube area shared by the two robots is **Cube 2 of Robot 1** and **Cube 1 of Robot 2**.  
+在上图中，由两个机器人共享的通用立方体区域是 **机器人 1 的立方体 2** 和 **机器人 2 的立方体 1**。  
   
-In this case:  
-- Connect **Robot 1 - Cube 2 (Cube-entry Output Signal)** and **Robot 2 - Cube 1 (Cube-prohibition Input Signal)**  
-- Connect **Robot 2 - Cube 1 (Cube-entry Output Signal)** and **Robot 1 - Cube 2 (Cube-prohibition Input Signal)**
-
+在这种情况下：  
+- 连接 **机器人 1 - 立方体 2 (立方体进入输出信号)** 和 **机器人 2 - 立方体 1 (立方体禁止输入信号)**  
+- 连接 **机器人 2 - 立方体 1 (立方体进入输出信号)** 和 **机器人 1 - 立方体 2 (立方体禁止输入信号)**
 [__SOURCE](2-cube-setting/4-example.md)
-# 2.4 Example of Creating and Executing a Work Program
+# 2.4 创建和执行工作程序的示例
 
 ![](../_assets/cube_interfer_example.png)
 
-Set cube areas of the same size at the same spatial location for each robot.  
-At this time, ensure that the cube positions are defined according to the coordinate system selected for each robot.
+为每个机器人设置相同空间位置的相同大小的立方体区域。  
+此时，确保立方体位置根据为每个机器人选择的坐标系进行定义。
 
 ---
 
-### **Robot 1: Cube-entry Output Signal ON, Robot 2: Cube-prohibition Signal ON**
+### **机器人 1：立方体进入输出信号开启，机器人 2：立方体禁止信号开启**
 
 ![](../_assets/exmple1.png)
 
-When Robot 1's target position lies inside the defined cube area, the cube-entry output signal turns ON.  
-Even if the target position is not inside the cube, the signal will turn ON if the robot enters the cube area during movement.
+当机器人 1 的目标位置位于定义的立方体区域内时，立方体进入输出信号开启。  
+即使目标位置不在立方体内，如果机器人在运动过程中进入立方体区域，信号也会开启。
 
 ---
 
-### **[Robot 1 Example]**
+### **[机器人 1 示例]**
 
-- In this example, steps S4 to S7 are assumed to enter the cube area.
+- 在此示例中，假设步骤 S4 到 S7 是进入立方体区域。
 
 ![](../_assets/exmple2.png)
 
-To prevent dead-lock caused by simultaneous cube entry with the other robot,  
-**the step immediately before entering the cube must be set as a non-continuous step (A = 0).**  
-Alternatively, commands such as **WAIT** or **DELAY** may be used before entering the cube to intentionally create a non-continuous condition.
+为了防止与其他机器人同时进入立方体而导致死锁，  
+**进入立方体之前的步骤必须设置为非连续步骤 (A = 0)。**  
+另外，可以在进入立方体之前使用 **WAIT** 或 **DELAY** 等指令来故意创建非连续条件。
 
 ---
 
-### **[Robot 2 Example]**
+### **[机器人 2 示例]**
 
-- In this example, Robot 1 (R1) is already inside the designated cube area, and Robot 2 attempts to enter the cube area defined in steps S4 to S7.
+- 在此示例中，机器人 1 (R1) 已经在指定的立方体区域内，机器人 2 尝试进入在步骤 S4 到 S7 中定义的立方体区域。
 
 ![](../_assets/exmple3.png)
 
-If the other robot is already inside the cube area, or is moving with the intention of entering it, the cube-prohibition signal (**di8**) is received.  
-If Robot 2's next target position lies inside the cube area, Robot 2 will stop and wait.  
-During this waiting state, the teach pendant displays the message:  
-**"Waiting cube entry."**
+如果其他机器人已经在立方体区域内，或者正在移动以进入立方体区域，则接收到立方体禁止信号 (**di8**)。  
+如果机器人 2 的下一个目标位置位于立方体区域内，机器人 2 将停止并等待。  
+在此等待状态下，教导挂件显示消息：  
+**"等待立方体进入。"**
 
-Once the other robot exits the cube area, Robot 2 automatically resumes operation.
-
+一旦其他机器人离开立方体区域，机器人 2 将自动恢复操作。
 [__SOURCE](3-error-check/README.md)
-# 3. Error Detection
+# 3. 错误检测
 
-| Error Message | E0222 Same cube simultaneous entry detected |
+| 错误信息 | E0222 检测到相同立方体同时进入 |
 | :--- | :--- |
-| Possible Cause of Error | This occurs when the cube-prohibition input signal is received while the robot is already inside the cube area. |
-| Corrective Actions | 1) Jog the robot outside the cube area, and then restart it. <br> 2) Modify the program to prevent this error from occurring. <br> - Set the step immediately before entering the cube as a non-continuous step. <br> - Use a WAIT command to perform additional interlocks right before cube entry. |
-
-
-[__SOURCE](appendices/README.md)
-# Appendices
-
-  
-
-
-
-[__SOURCE](appendices/rules-occupational-safety.md)
-# Rules on Occupational Safety and Health Standards, and Notice for Safety Inspection
-
-The industrial robot should be installed in consideration of the inspection standards both of the Rules on Occupational Safety and Health Standards and of the Notice for Safety Inspection \(if subject to inspection\).
-
-"[Rules on Occupational Safety and Health Standards](https://hrbook-hrc.web.app/#/view/rules-on-occupational-safety-and-health-standards/en/README)"
-
-[__SOURCE](quality-assurance.md)
-# Quality Assurance
-
-"[Quality Assurance](https://hrbook-hrc.web.app/#/view/quality-assurance/en/README)"
+| 错误的可能原因 | 当机器人已经进入立方体区域时接收到立方体禁止输入信号时，会发生此情况。 |
+| 纠正措施 | 1) 将机器人移出立方体区域，然后重新启动。 <br> 2) 修改程序以防止此错误发生。 <br> - 将进入立方体之前的步骤设置为非连续步骤。 <br> - 使用 WAIT 命令在进入立方体之前执行额外的联锁。 |

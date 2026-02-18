@@ -1,26 +1,25 @@
-﻿# 2.1 Cube Area Setting Methods
+# 2.1 立方体区域设置方法
 
-Two methods are provided for defining a cube area.
+提供两种方法来定义立方体区域。
 
 ---
 
-### 2.1.1 Diagonal Point Method
+### 2.1.1 对角点法
 ![](../_assets/diag_pints2.png)
 
-- This method defines the cube by specifying two diagonal points of the hexahedron.  
-  As shown in the illustration, you manually enter the starting and ending diagonal positions.
-- To record the robot's current TCP position, place the cursor on the **<Start Position>** or **<End Position>** and press `Current robot pose`.  
-  The current TCP position will be saved as the selected position.
-- Setting Example
+- 此方法通过指定六面体的两个对角点来定义立方体。  
+  如图所示，您手动输入起始和结束的对角位置。
+- 要记录机器人的当前TCP位置，将光标放在**<起始位置>**或**<结束位置>**上，然后按 `当前 机器人 姿态 (Current robot pose)`。  
+  当前TCP位置将被保存为选定位置。
+- 设置示例
   ![](../_assets/cube_diag_points.png)  
 
-### 2.1.2 Center Point Method
+### 2.1.2 中心点法
 ![](../_assets/center_point2.png)
 
-- This method sets the cube's center point and the distances in the X, Y, and Z directions respectively.
-- The position of the cube area's center point is recorded, and the distances in the X, Y, and Z directions from the center point are set individually.
-- To record the center point as the robot's current TCP position, place the cursor on **<Center Position>** and press the `Current Robot Pose` button to save the current position.
+- 此方法设置立方体的中心点以及在X、Y和Z方向上的距离。
+- 记录立方体区域的中心点位置，并分别设置从中心点出发在X、Y和Z方向的距离。
+- 要将中心点记录为机器人的当前TCP位置，将光标放在**<中心位置>**上，并按`Current Robot Pose`按钮以保存当前的位置。
 
-- Setting Example  
+- 设置示例  
   ![](../_assets/center_point.png)
-

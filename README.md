@@ -1,1 +1,1 @@
-﻿# ${cont_model} Controller Function Manual - Cube Interference Check
+﻿# ${cont_model} 控制器功能手册 - 立方体干扰检查

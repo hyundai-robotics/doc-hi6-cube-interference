@@ -1,69 +1,55 @@
-﻿# Safety Cautions
+# 安全注意事项
 
-Before using the product, you must read the following safety cautions for proper use, user safety, and prevention of property damage.
+在使用产品之前，您必须阅读以下安全注意事项，以确保正确使用、用户安全以及防止财产损失。
 
-### Danger
+### 危险
 
 {% hint style="danger" %}
-Imminent danger: Incompliance may cause the death of or serious injuries to the operator.
+迫在眉睫的危险：不遵守可能会导致操作人员死亡或严重受伤。
 {% endhint %}
 
-* Read the contents of the product installation in the manual and follow the instructions when installing the robot product and other devices.
-* If a fatal error occurs in the software, stop using it immediately, and contact our customer support team.
-* If there is a problem with the product, such as failure or damage, stop using it immediately and contact the customer support team for inquiry.
+* 阅读手册中产品安装的内容，并在安装机器人产品及其他设备时遵循说明。
+* 如果软件出现致命错误，请立即停止使用，并联系客户支持团队。
+* 如果产品出现故障或损坏等问题，请立即停止使用，并联系客户支持团队进行咨询。
 
-
-
-### Warning
+### 警告
 
 {% hint style="warning" %}
-Potential danger: Incompliance may cause injuries to the operator or damage to property, such as significant damage to the product.
+潜在危险：不遵守可能会导致操作人员受伤或财产损失，例如产品的重大损坏。
 {% endhint %}
 
-
-
-* The safety equipment to be used after being connected to the controller must be connected to the safety contact terminal or to the configurable digital I/O set, which is to be set as the safety I/O, in double signals. When the equipment is connected to common contact terminals or in a single signal, the regulated safety level cannot be satisfied.
-* Do not put your fingers or other body parts behind the controller's inner bracket. There is a risk of electric shock or injury.
+* 连接到控制器后的安全设备必须连接到安全接触端子或配置的数字I/O集，这些设备应以双信号设置为安全I/O。当设备连接到普通接触端子或单信号时，无法满足规定的安全级别。
+* 不要将手指或其他身体部位放在控制器的内支架后面。有触电或受伤的风险。
 * 
-  If you are a robot application system manufacturer or a robot user, you should fully understand the contents of the manual and complete the product operation training.
+  如果您是机器人应用系统制造商或机器人用户，您应该充分理解手册内容，并完成产品操作培训。
 
-* For the safety of workers and users, you must prepare appropriate safety facilities, such as safety fences, before installing the product.
-* Check the specification information and perform fastening by using appropriate fixing screws. Loosened screws may lead to separation of the robot, causing it to fall or suffer damage.
-* Be careful not to let conductive foreign substances, such as liquid, dust, or metal powder, enter the connection sections \(power and cables\). Moreover, do not poke the connection parts with a pointed object or apply excessive force to them when connecting them. Corrosion or temporary short-circuiting of the connection terminals may cause the product to explode or suffer a fire.
-* Check the wiring information and connect the devices using the appropriate terminals corresponding to the type of individual devices. In particular, if a safety device is connected to a general terminal, the safety function cannot be guaranteed, so you must connect it to the terminal designed for safety devices.
-* Never use a damaged cable and do not disconnect the power while the product is in use. It may cause electric shock, fire, failure, or injury.
+* 为了工人和用户的安全，您必须在安装产品之前准备适当的安全设施，例如安全围栏。
+* 检查规格信息并使用适当的固定螺丝进行紧固。松动的螺丝可能导致机器人分离，造成坠落或损坏。
+* 注意不要让导电异物，例如液体、灰尘或金属粉末，进入连接部分（电源和电缆）。此外，在连接时，不要用尖锐物体戳连接部件，也不要对其施加过大力气。连接端子的腐蚀或临时短路可能导致产品爆炸或起火。
+* 检查接线信息，并使用适当的端子连接设备，端子应与各个设备的类型相对应。特别是，如果安全设备连接到普通端子，则无法保证安全功能，因此必须连接到为安全设备设计的端子。
+* 切勿使用损坏的电缆，也不要在产品使用时断开电源。这可能会造成触电、火灾、故障或受伤。
 * 
-  If the product is used for a long time, it may generate heat and cause injury, such as burns. If you need to touch the product, turn off the power and leave it for at least one hour to let it cool sufficiently before carrying out works.
+  如果产品长时间使用，可能会产生热量并导致受伤，例如烫伤。如果需要接触产品，请关闭电源，并让其静置至少一个小时，以便充分冷却后再进行操作。
 
 * 
-  Use the teach pendant while paying attention to the movement of the robot.
+  使用教学挂件时，请注意机器人的运动。
 
-* If the teach pendant warns of a fatal error, stop the robot with the emergency stop switch immediately, identify the cause, and resolve the error. If the error cannot be resolved, please contact our customer support team for an inquiry.
-* Never install, modify, disassemble, or repair the product without our permission. It may cause a failure or an accident. In addition, we are not responsible for any damage to or breaking of the product if you do not follow the instructions.
+* 如果教学挂件警告发生致命错误，请立即使用急停开关停止机器人，找出原因并解决错误。如果无法解决错误，请联系客户支持团队进行咨询。
+* 未经我们的许可，切勿安装、修改、拆卸或修理产品。这可能会造成故障或事故。此外，如果您不遵循说明，我们不对产品的任何损坏或破损负责。
 
-
-
-### Caution
+### 注意
 
 {% hint style="warning" %}
-Low-level danger factor: Incompliance may result in minor injury to the operator or damage to property, such as damage to the product.
+低级危险因素：不遵守可能导致操作人员轻微受伤或财产损失，例如产品损坏。
 {% endhint %}
-
-
-
-* Do not install, modify, disassemble, or repair the product arbitrarily as it is prohibited for anyone other than our experts to arbitrarily modify the product or attach parts. If the product fails because of such acts, our free service and warranty service will be forfeited.
-* A qualified installer should install the product in compliance with the related regulations and laws of the concerned country and region. When you want to install and repair the product, contact our customer support team, and ask an expert.
-* Do not install and use the product in a dusty or dirty place. Dust or foreign substances may cause failure or abnormal performance of the product.
-* Do not install and use the product in a place where magnetism exists or its influence reaches the product or there is electromagnetic interference. Magnetism may damage the product or cause abnormal performance.
-* When operating the product, do not wear loose clothing or jewelry, and if the hair is long, take precautions to tie it back so that the hair does not get caught in the joints of the robot.
-* Do not enter the operation range or touch the robot while the robot is in operation. Otherwise, there is a risk of injury.
-* Prevent the product from being damaged by transporting it in a packaged state and by storing it in a dry place with low humidity. Otherwise, the moisture inside the packaging material may cause the product to get damaged or to fail.
-* When it comes to storing the product, avoid places where temperature and humidity may change easily. Store the product in a clean, cool, and dry place.
-* When transporting the product, maintain proper posture, and two or more people should work together. Otherwise, you may suffer injury to parts of your body, including waist, arms, and legs.
-* If you use lifting equipment to transport the product, follow the safety regulations and equipment usage guidelines in the concerned country and region.
-* When transporting the product, fully understand the transportation-related contents of the manual and comply with the instructions. We are not responsible for any damage to or breaking of the product because of transportation by the customer.
-
-
-
-
-
+* 不要任意安装、修改、拆解或修理产品，因为除了我们的专家，任何人都禁止擅自修改产品或附加部件。如果因这些行为导致产品故障，我们的免费服务和保修服务将被取消。
+* 合格的安装人员应根据相关国家和地区的法规和法律安装产品。当您想安装和修理产品时，请联系客户支持团队，并咨询专业人士。
+* 不要在多尘或肮脏的地方安装和使用产品。灰尘或异物可能导致产品故障或异常性能。
+* 不要在存在磁场或其影响范围内，或存在电磁干扰的地方安装和使用产品。磁场可能损坏产品或导致异常性能。
+* 在操作产品时，不要穿戴宽松的衣物或首饰，如果头发较长，应采取措施将其扎起来，以免头发卷入机器人的关节中。
+* 在机器人运行时，禁止进入其操作范围或触摸机器人。否则，可能会有受伤的风险。
+* 在运输产品时，请保持包装状态，存放在干燥、低湿度的地方，以防产品受损。否则，包装材料内部的湿气可能导致产品损坏或故障。
+* 存放产品时，避免温度和湿度易变的地方。将产品存放在干净、凉爽、干燥的地方。
+* 运输产品时，保持正确的姿势，至少两人应协作进行。否则，您可能会遭受腰部、手臂和腿部等身体部位的伤害。
+* 如果使用起重设备运输产品，请遵循相关国家和地区的安全规定和设备使用指南。
+* 运输产品时，充分理解手册中与运输相关的内容，并遵守说明。因客户运输导致的产品损坏或破损，我们不承担任何责任。

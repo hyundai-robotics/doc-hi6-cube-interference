@@ -1,28 +1,25 @@
-﻿# 2.2 Setting the Coordinate System Number
+﻿# 2.2 设置坐标系统编号
 
-You can specify the position of the cube in space using either the base coordinate system or a defined user coordinate system, depending on the cube setting method.  
+您可以根据立方体设置方法，使用基本坐标系统或定义的用户坐标系统来指定立方体在空间中的位置。  
 
 ![Cube Setting](../_assets/fig1_dst_dialog.png)
 
+如果坐标系统编号设置为 **"0"**，则立方体区域的配置使用在 **基本坐标系统** 中定义的位置。  
+如果坐标系统编号为 **"1" 或更高**，则立方体区域是基于相应的 **用户坐标系统** 中的位置定义的。
 
-If the coordinate system number is set to **"0"**, the cube area is configured using positions defined in the **base coordinate system**.  
-If the coordinate system number is **"1" or higher**, the cube area is defined using positions based on the corresponding **user coordinate system**.
+### 坐标系统编号
+- 设置为基本坐标系统
+    - 当坐标系统编号设置为 0 时，立方体区域使用在基本坐标系统中定义的位置进行定义。
 
-
-### Coordinate System Number
-- Set to the base coordinate system
-    - When the coordinate system number is set to 0, the cube area is defined using positions defined in the base coordinate system.
-
-- Set to a user coordinate system
-    - When the coordinate system number is set to 1 or higher, the cube area is specified using positions in the user coordinate system corresponding to that number.
-    - When using a user coordinate system, both the diagonal position and the center position must be set within the user coordinate system.
+- 设置为用户坐标系统
+    - 当坐标系统编号设置为 1 或更高时，立方体区域使用与该编号对应的用户坐标系统中的位置进行指定。
+    - 在使用用户坐标系统时，斜对角位置和中心位置都必须在用户坐标系统内设置。
 
 {% hint style="info" %}  
-Even if you change the coordinate system, the positions defined for the cube area do **not** update automatically. Therefore, the cube may be assigned to a location different from what the user intended, so caution is required.
+即使您更改坐标系统，定义的立方体区域位置也不会自动更新。因此，立方体可能被分配到与用户意图不同的位置，因此需要小心。
 {% endhint %}
 
-
-- When using a **user coordinate system**, both the diagonal point and the center point **must be defined within the user coordinate system**.
+- 使用 **用户坐标系统** 时，斜对角点和中心点 **必须在用户坐标系统内定义**。
 
 <img src="../_assets/user1.png" width="40%"/>
 <img src="../_assets/user2.png" width="44%"/>
