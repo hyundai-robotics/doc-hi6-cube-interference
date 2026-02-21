@@ -1,8 +1,8 @@
 ﻿# Table of contents
 
-          * [${cont_model} 控制器功能手册 - 立方体干扰检查](README.md)
-          * [注意事项](0-about-this-manual/precautions.md)
-          * [关于手册](0-about-this-manual/README.md)
+* [${cont_model} 控制器功能手册 - 立方体干扰检查](README.md)
+* [注意事项](0-about-this-manual/precautions.md)
+* [关于手册](0-about-this-manual/README.md)
 * [1. 概述](1-intro/README.md)
 * [2. 相关功能](2-cube-setting/README.md)
   * [2.1 立方体区域设置方法](2-cube-setting/1-setting-type.md)
@@ -10,6 +10,6 @@
   * [2.3 立方体 I/O 信号设置](2-cube-setting/3-io.md)
   * [2.4 创建和执行工作程序的示例](2-cube-setting/4-example.md)
 * [3. 错误检测](3-error-check/README.md)
-          * [附录](appendices/README.md)
-          * [职业安全与健康标准的规则，以及安全检查通知](appendices/rules-occupational-safety.md)
-          * [质量保证](quality-assurance.md)
+* [附录](appendices/README.md)
+* [职业安全与健康标准的规则，以及安全检查通知](appendices/rules-occupational-safety.md)
+* [质量保证](quality-assurance.md)

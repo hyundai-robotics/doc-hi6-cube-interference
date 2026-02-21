@@ -1,4 +1,14 @@
 ﻿
+[__SOURCE](README.md)
+# ${cont_model} 控制器功能手册 - 立方体干扰检查
+[__SOURCE](0-about-this-manual/precautions.md)
+# 注意事项
+
+{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/zh/precautions.md" %}
+[__SOURCE](0-about-this-manual/README.md)
+# 关于手册
+
+本手册解释了 HD 现代机器人 ${cont_model} 控制器的立方体干扰检查功能的基本原理、结构和应用方法。每一章不仅描述了基本操作程序，还介绍了如何使用简单的应用功能。
 [__SOURCE](1-intro/README.md)
 # 1. 概述
 
@@ -160,3 +170,15 @@
 | :--- | :--- |
 | 错误的可能原因 | 当机器人已经进入立方体区域时接收到立方体禁止输入信号时，会发生此情况。 |
 | 纠正措施 | 1) 将机器人移出立方体区域，然后重新启动。 <br> 2) 修改程序以防止此错误发生。 <br> - 将进入立方体之前的步骤设置为非连续步骤。 <br> - 使用 WAIT 命令在进入立方体之前执行额外的联锁。 |
+[__SOURCE](appendices/README.md)
+# 附录
+[__SOURCE](appendices/rules-occupational-safety.md)
+# 职业安全与健康标准的规则，以及安全检查通知
+
+工业机器人应根据《职业安全与健康标准的规则》和《安全检查通知》的检查标准进行安装（如果需检查）。
+
+"[职业安全与健康标准的规则](https://hrbook-hrc.web.app/#/view/rules-on-occupational-safety-and-health-standards/en/README)"
+[__SOURCE](quality-assurance.md)
+# 质量保证
+
+"[Quality Assurance](https://hrbook-hrc.web.app/#/view/quality-assurance/en/README)"
