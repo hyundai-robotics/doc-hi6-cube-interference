@@ -6,7 +6,7 @@
 [__SOURCE](0-about-this-manual/precautions.md)
 # 사전 주의사항
 
-{% include url="https://hrcontentsrelay-bmgae5hdbzapc4bc.koreacentral-01.azurewebsites.net/api/proxy?path=doc-common-pages/ko/precautions.md" %}
+{% include file="ko/precautions.md" %}
 
 [__SOURCE](0-about-this-manual/README.md)
 # 이 설명서에 대하여
@@ -52,7 +52,7 @@
 [__SOURCE](2-cube-setting/README.md)
 # 2. 큐브 영역 설정
 
-`시스템 - 4: 응용파라미터 - 7: 간섭방지 - 2: 큐브 조건 설정`을 선택합니다.
+`시스템 - 4: 응용파라미터 - 7: 큐브 간섭 방지`를 선택합니다.
 
 ![큐브설정](../_assets/fig1_dst_dialog.png)
 
