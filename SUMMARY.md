@@ -1,8 +1,9 @@
 ﻿# Table of contents
 
 * [${cont_model} 로봇제어기 기능설명서 - 큐브 간섭 방지](README.md)
-* [사전 주의사항](0-about-this-manual/precautions.md)
 * [이 설명서에 대하여](0-about-this-manual/README.md)
+  * [사전 주의사항](0-about-this-manual/precautions.md)
+  * [안전 주의 사항](0-about-this-manual/safety-notice.md)
 * [1. 개요](1-intro/README.md)
 * [2. 큐브 간섭방지 설정](2-cube-setting/README.md)
   * [2.1 큐브영역 설정](2-cube-setting/1-setting-type.md)
