@@ -11,6 +11,5 @@
   * [2.3 Signal Settings](2-cube-setting/3-io.md)
   * [2.4 Example of Creating and Executing a Work Program](2-cube-setting/4-example.md)
 * [3. Errors](3-error-check/README.md)
-* [Appendices](appendices/README.md)
-  * [Rules on Occupational Safety and Health Standards, and Notice for Safety Inspection](appendices/rules-occupational-safety.md)
+* [Rules on Occupational Safety and Health Standards, and Notice for Safety Inspection](appendices/rules-occupational-safety.md)
 * [Quality Assurance](quality-assurance.md)

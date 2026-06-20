@@ -189,13 +189,6 @@ Once the other robot exits the cube area, Robot 2 automatically resumes operatio
 | Corrective Actions | 1) Jog the robot outside the cube area, and then restart it. <br> 2) Modify the program to prevent this error from occurring. <br> - Set the step immediately before entering the cube as a non-continuous step. <br> - Use a WAIT command to perform additional interlocks right before cube entry. |
 
 
-[__SOURCE](appendices/README.md)
-# Appendices
-
-  
-
-
-
 [__SOURCE](appendices/rules-occupational-safety.md)
 # Rules on Occupational Safety and Health Standards, and Notice for Safety Inspection
 
