@@ -2,15 +2,20 @@
 [__SOURCE](README.md)
 # ${cont_model} Controller Function Manual - Cube Interference Check
 
+[__SOURCE](0-about-this-manual/README.md)
+# About the Manual
+
+This manual explains the fundamentals, structure, and application methods of the cube-interference check function of the HD Hyundai Robotics ${cont_model} controller. Each chapter describes not only the basic operation procedures but also how to use simple application functions.
+
 [__SOURCE](0-about-this-manual/precautions.md)
 # Precautions
 
 {% include file="en/precautions.md" %}
 
-[__SOURCE](0-about-this-manual/README.md)
-# About the Manual
+[__SOURCE](0-about-this-manual/safety-notice.md)
+# Safety Cautions
 
-This manual explains the fundamentals, structure, and application methods of the cube-interference check function of the HD Hyundai Robotics ${cont_model} controller. Each chapter describes not only the basic operation procedures but also how to use simple application functions.
+{% include file="en/safety-notice.md" %}
 
 [__SOURCE](1-intro/README.md)
 # 1. Overview
