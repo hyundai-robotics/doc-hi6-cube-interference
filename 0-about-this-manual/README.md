@@ -1,3 +1,3 @@
-﻿# About the Manual
+﻿# 关于手册
 
-This manual explains the fundamentals, structure, and application methods of the cube-interference check function of the HD Hyundai Robotics ${cont_model} controller. Each chapter describes not only the basic operation procedures but also how to use simple application functions.
+本手册解释了 HD Hyundai Robotics ${cont_model} 控制器的立方体干扰检查功能的基本原理、结构和应用方法。每一章不仅描述了基本操作程序，还介绍了如何使用简单的应用功能。

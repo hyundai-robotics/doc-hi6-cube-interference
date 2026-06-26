@@ -1,7 +1,6 @@
-﻿# 3. Error Detection
+﻿# 3. 错误检测
 
-| Error Message | E0222 Same cube simultaneous entry detected |
+| 错误信息 | E0222 同时检测到相同的立方体输入 |
 | :--- | :--- |
-| Possible Cause of Error | This occurs when the cube-prohibition input signal is received while the robot is already inside the cube area. |
-| Corrective Actions | 1) Jog the robot outside the cube area, and then restart it. <br> 2) Modify the program to prevent this error from occurring. <br> - Set the step immediately before entering the cube as a non-continuous step. <br> - Use a WAIT command to perform additional interlocks right before cube entry. |
-
+| 错误可能原因 | 当立方体禁止输入信号在机器人已经进入立方体区域时接收时，会发生这种情况。 |
+| 纠正措施 | 1) 使机器人移动到立方体区域外，然后重新启动。 <br> 2) 修改程序以防止此错误发生。 <br> - 在进入立方体之前的步骤设置为非连续步骤。 <br> - 使用 WAIT 命令在进入立方体之前执行额外的联锁。 |

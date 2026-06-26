@@ -1,16 +1,16 @@
-﻿# 2.3 Cube I/O Signal Settings
+﻿# 2.3 立方体 I/O 信号设置
 
-### Cube-entry Output Signal
-  This signal indicates whether the robot itself has entered the designated cube area.  
-  Assign the appropriate signal number to the cube-entry output signal field.
+### 立方体进入输出信号
+  此信号指示机器人本身是否已进入指定的立方体区域。  
+  将适当的信号编号分配给立方体进入输出信号字段。
 
-### Cube-prohibition Input Signal
-  This signal number is assigned to receive an input when another robot enters the same cube area.
+### 立方体禁止输入信号
+  此信号编号被分配用于在另一台机器人进入同一立方体区域时接收输入。
 
-### Common Cube Area Connection Method
+### 共用立方体区域连接方法
 ![](../_assets/common_cube.png)  
-In the example shown above, the common cube area shared by the two robots is **Cube 2 of Robot 1** and **Cube 1 of Robot 2**.  
+在上面的示例中，两个机器人的共用立方体区域是**机器人 1 的立方体 2**和**机器人 2 的立方体 1**。  
   
-In this case:  
-- Connect **Robot 1 - Cube 2 (Cube-entry Output Signal)** and **Robot 2 - Cube 1 (Cube-prohibition Input Signal)**  
-- Connect **Robot 2 - Cube 1 (Cube-entry Output Signal)** and **Robot 1 - Cube 2 (Cube-prohibition Input Signal)**
+在这种情况下：  
+- 连接**机器人 1 - 立方体 2（立方体进入输出信号）**和**机器人 2 - 立方体 1（立方体禁止输入信号）**  
+- 连接**机器人 2 - 立方体 1（立方体进入输出信号）**和**机器人 1 - 立方体 2（立方体禁止输入信号）**

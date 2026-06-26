@@ -1,32 +1,32 @@
-﻿# 1. Overview
+# 1. 概述
 
-### 1.1 Purpose of the Function
+### 1.1 功能目的
 
-- Prevent multiple robots from simultaneously entering the same cube area during playback.  
-- When the robot's tool center point (TCP) enters a defined cube area, a signal is output, allowing the user to utilize this signal for various applications.
+- 防止多个机器人在播放期间同时进入相同的立方体区域。  
+- 当机器人的工具中心点（TCP）进入定义的立方体区域时，会输出信号，允许用户将此信号用于各种应用。
 
 ![Overview](../_assets/schematic_diagram.png)
 
-### 1.2 Scope of the Function
-1) When the robot program is running
-    - If the robot's TCP is inside the defined cube area, the assigned output signal turns **ON**; if it is outside, the signal turns **OFF**.  
-    - When a robot's TCP enters the cube area, or when its step target position enters the cube area during step execution, that robot gains priority for the area and outputs a cube-entry signal (left robot in the figure above).  
-    - The cube-entry output signal is received by the other robot (right robot in the figure above) as a cube-prohibition input signal, and the receiving robot automatically stops when cube interference is expected.  
-    - When the robot that first entered the cube area completes its operation, the waiting robot automatically restarts.
+### 1.2 功能范围
+1) 当机器人程序运行时
+    - 如果机器人的TCP在定义的立方体区域内，分配的输出信号将**开启**；如果在外部，信号将**关闭**。  
+    - 当机器人的TCP进入立方体区域，或当其步骤目标位置在步骤执行期间进入立方体区域时，该机器人获得该区域的优先权并输出立方体进入信号（如上图左侧的机器人）。  
+    - 立方体进入输出信号被另一台机器人（如上图右侧的机器人）接收为立方体禁止输入信号，当预期发生立方体干扰时，接收机器自动停止。  
+    - 当第一进入立方体区域的机器人完成其操作后，等待的机器人会自动重新启动。
 
-2) When the robot is jogging or stopped
-    - In Manual Mode (Jog), the system detects the TCP position and outputs the cube-entry signal.  
-    - During jog operation, even if the cube-prohibition input signal is received, the robot **does not** automatically stop, so caution is required.
+2) 当机器人在手动操作或停止时
+    - 在手动模式（Jog）下，系统检测TCP位置并输出立方体进入信号。  
+    - 在手动操作期间，即使收到立方体禁止输入信号，机器人**不会**自动停止，因此需要谨慎。
 
-### 1.3 Limitations of the Function
+### 1.3 功能限制
 
-This function is designed to automatically stop the robot when simultaneous entry into a cube is expected and to automatically restart once the cube-prohibition input signal is cleared.
+此功能旨在当预期同时进入立方体时自动停止机器人，并在立方体禁止输入信号解除后自动重新启动。
 
-However, even if the robot decelerates as much as possible when a cube-prohibition input signal is detected, there may be cases where simultaneous entry into the cube area cannot be avoided. This situation is called a **dead-lock**.
+然而，即使在检测到立方体禁止输入信号时尽可能减速，仍可能会出现无法避免同时进入立方体区域的情况。这种情况被称为**死锁**。
 
-A dead-lock may occur if the cube-entry output signal and cube-prohibition input signal are incorrectly connected for a shared cube, or due to communication delays between two robots. In such cases, both robots may enter the cube area simultaneously, resulting in an error:  
-**E0222 - Same cube simultaneous entry detected**.
+如果立方体进入输出信号与立方体禁止输入信号连接错误，或由于两台机器人之间的通信延迟，可能会发生死锁。在这种情况下，两台机器人可能会同时进入立方体区域，导致错误：  
+**E0222 - 检测到相同立方体同时进入**。
 
-- A dead-lock condition may occur when two robots attempt to enter a shared cube area simultaneously.  
-- Automatic avoidance of dead-lock or automatic return-to-home recovery is **not supported**.  
-- This function **cannot** be used in conjunction with the Arm Interference Detection function.
+- 当两台机器人试图同时进入共享立方体区域时，可能会发生死锁条件。  
+- **不支持**自动避免死锁或自动返家恢复。  
+- 此功能**不能**与臂干扰检测功能一起使用。

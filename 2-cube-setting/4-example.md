@@ -1,42 +1,42 @@
-﻿# 2.4 Example of Creating and Executing a Work Program
+﻿# 2.4 创建和执行工作程序的示例
 
 ![](../_assets/cube_interfer_example.png)
 
-Set cube areas of the same size at the same spatial location for each robot.  
-At this time, ensure that the cube positions are defined according to the coordinate system selected for each robot.
+在每个机器人相同的空间位置设置大小相同的立方体区域。  
+此时，确保立方体位置根据每个机器人所选的坐标系进行定义。
 
 ---
 
-### **Robot 1: Cube-entry Output Signal ON, Robot 2: Cube-prohibition Signal ON**
+### **机器人 1：立方体入口输出信号开启，机器人 2：立方体禁止信号开启**
 
 ![](../_assets/exmple1.png)
 
-When Robot 1's target position lies inside the defined cube area, the cube-entry output signal turns ON.  
-Even if the target position is not inside the cube, the signal will turn ON if the robot enters the cube area during movement.
+当机器人 1 的目标位置位于定义的立方体区域内时，立方体入口输出信号开启。  
+即使目标位置不在立方体内，如果机器人在移动过程中进入立方体区域，信号也会开启。
 
 ---
 
-### **[Robot 1 Example]**
+### **[机器人 1 示例]**
 
-- In this example, steps S4 to S7 are assumed to enter the cube area.
+- 在这个示例中，假设步骤 S4 到 S7 进入立方体区域。
 
 ![](../_assets/exmple2.png)
 
-To prevent dead-lock caused by simultaneous cube entry with the other robot,  
-**the step immediately before entering the cube must be set as a non-continuous step (A = 0).**  
-Alternatively, commands such as **WAIT** or **DELAY** may be used before entering the cube to intentionally create a non-continuous condition.
+为了防止由于与另一机器人同时进入立方体而导致的死锁，  
+**进入立方体之前的步骤必须设置为非连续步骤 (A = 0)。**  
+或者，可以在进入立方体之前使用 **WAIT** 或 **DELAY** 等命令故意创建非连续条件。
 
 ---
 
-### **[Robot 2 Example]**
+### **[机器人 2 示例]**
 
-- In this example, Robot 1 (R1) is already inside the designated cube area, and Robot 2 attempts to enter the cube area defined in steps S4 to S7.
+- 在这个示例中，机器人 1 (R1) 已经在指定的立方体区域内，机器人 2 尝试进入步骤 S4 到 S7 中定义的立方体区域。
 
 ![](../_assets/exmple3.png)
 
-If the other robot is already inside the cube area, or is moving with the intention of entering it, the cube-prohibition signal (**di8**) is received.  
-If Robot 2's next target position lies inside the cube area, Robot 2 will stop and wait.  
-During this waiting state, the teach pendant displays the message:  
-**"Waiting cube entry."**
+如果另一台机器人已经在立方体区域内，或者正在移动以进入立方体区域，立方体禁止信号 (**di8**) 将被接收。  
+如果机器人 2 的下一个目标位置位于立方体区域内，机器人 2 将停止并等待。  
+在这个等待状态中，教学挂件显示信息：  
+**"等待立方体进入。"**
 
-Once the other robot exits the cube area, Robot 2 automatically resumes operation.
+一旦另一台机器人退出立方体区域，机器人 2 会自动恢复操作。
