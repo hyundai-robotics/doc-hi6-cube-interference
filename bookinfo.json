@@ -1,7 +1,7 @@
 ﻿{
     "langCode": "zh",
     "series": "${cont_model} 控制器",
-    "title": "Function Manual - 立方体干涉检查",
+    "title": "功能手册 - 立方体干涉检查",
     "publisher": "HD Hyundai Robotics",
     "tocTitle": "目录",
     "tocTitleElements": "[ \"h1\", \"h2\" ]",
